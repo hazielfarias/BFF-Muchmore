@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   version = "1.3">
+   <BuildAction>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForRunning = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "311A4A3922DF5298001CB461"
+               BuildableName = "BFF-Muchmore.app"
+               BlueprintName = "BFF-Muchmore"
+               ReferencedContainer = "container:BFF-Muchmore.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "311A4A3922DF5298001CB461"
+            BuildableName = "BFF-Muchmore.app"
+            BlueprintName = "BFF-Muchmore"
+            ReferencedContainer = "container:BFF-Muchmore.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+</Scheme>
