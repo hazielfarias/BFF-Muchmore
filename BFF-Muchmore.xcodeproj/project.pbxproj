@@ -24,6 +24,7 @@
 		311A4A9122DF7447001CB461 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8922DF7447001CB461 /* list-fat-7.png */; };
 		311A4A9222DF7447001CB461 /* logo-branca.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8A22DF7447001CB461 /* logo-branca.png */; };
 		311A4A9622DFA1F3001CB461 /* capa-teste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A9522DFA1F3001CB461 /* capa-teste.jpg */; };
+		69294AC822E001A800DFCC73 /* ModalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69294AC722E001A800DFCC73 /* ModalDetailViewController.swift */; };
 		6940D8B322DFC51B00669E97 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 6940D8B122DFC51B00669E97 /* play.png */; };
 		6940D8B422DFC51B00669E97 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6940D8B222DFC51B00669E97 /* pause.png */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		311A4A8922DF7447001CB461 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
 		311A4A8A22DF7447001CB461 /* logo-branca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-branca.png"; sourceTree = "<group>"; };
 		311A4A9522DFA1F3001CB461 /* capa-teste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "capa-teste.jpg"; sourceTree = "<group>"; };
+		69294AC722E001A800DFCC73 /* ModalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetailViewController.swift; sourceTree = "<group>"; };
 		6940D8B122DFC51B00669E97 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		6940D8B222DFC51B00669E97 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 		311A4A3C22DF5298001CB461 /* BFF-Muchmore */ = {
 			isa = PBXGroup;
 			children = (
+				69294AC622E0017B00DFCC73 /* ModalDetail */,
 				311A4A8422DF7447001CB461 /* Assets */,
 				311A4A7F22DF685D001CB461 /* Model */,
 				311A4A7A22DF6484001CB461 /* Programming */,
@@ -191,6 +194,14 @@
 				311A4A8A22DF7447001CB461 /* logo-branca.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		69294AC622E0017B00DFCC73 /* ModalDetail */ = {
+			isa = PBXGroup;
+			children = (
+				69294AC722E001A800DFCC73 /* ModalDetailViewController.swift */,
+			);
+			path = ModalDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				311A4A7C22DF649D001CB461 /* ProgrammingViewController.swift in Sources */,
+				69294AC822E001A800DFCC73 /* ModalDetailViewController.swift in Sources */,
 				311A4A4022DF5298001CB461 /* HomeViewController.swift in Sources */,
 				311A4A8122DF687F001CB461 /* ProgramData.swift in Sources */,
 				311A4A8322DF6C08001CB461 /* TableViewCell.swift in Sources */,

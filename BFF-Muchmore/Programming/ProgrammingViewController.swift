@@ -13,17 +13,18 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
     
-    let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue"), ProgramData(title: "Programa da madruga", detail: "Começa as 20h termina as 8h", imageAdress: "capa-teste.jpg", sinopse: "uni duni tê salame mingue")]
+    let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue"), ProgramData(title: "Programa da madruga", detail: "Começa as 20h termina as 8h", imageAdress: "capa-teste.jpg", sinopse: "uni duni tê salame mingue oajsdiasdijaisd asjdiadjsia iajsdiajds ajsdiasd aisdj iasdjiasdj iajsdioasdjáiosdjaios aisdj aisdjai sdaisdjaisdj aa sdia sidjaiosdj asidj asdjaisd aisdj")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableProgramming.dataSource = self
+        /*
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.alpha = 0.8
         blurView.frame = background.bounds
-        background.addSubview(blurView)
-       
+        background.addSubview(blurView)*/
+ 
         
     }
     
@@ -41,8 +42,8 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource{
         cell.backgroundColor = UIColor.clear
         
         
-        //let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showSinopse))
-        //cell.addGestureRecognizer(longPress)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showSinopse))
+        cell.addGestureRecognizer(longPress)
         
         return cell
     }
@@ -50,8 +51,25 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource{
     
   
     
-    func showSinopse(){
-        print("haha")
+    @objc func showSinopse(recognizer: UILongPressGestureRecognizer){
+        if recognizer.state == UIGestureRecognizer.State.began{
+            let cell:UITableViewCell = recognizer.view as! UITableViewCell
+           
+            if let indexPath = tableProgramming.indexPath(for: cell){
+                let row = indexPath.row
+                let programa = lista[row]
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "modalDetail") as! ModalDetailViewController
+                controller.programa = programa
+                
+                self.navigationController?.pushViewController(controller, animated: true)
+            
+                
+            }
+            
+            
+            
+        }
     }
     
 }
