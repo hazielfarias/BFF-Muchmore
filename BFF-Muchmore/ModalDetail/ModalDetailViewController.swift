@@ -26,7 +26,7 @@ class ModalDetailViewController: UIViewController {
             programTitle.text = program.title
             programDetail.text = program.detail
         }
-
+        
        
     }
     
