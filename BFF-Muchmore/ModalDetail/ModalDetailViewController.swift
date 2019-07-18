@@ -10,6 +10,7 @@ import UIKit
 
 class ModalDetailViewController: UIViewController {
 
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var imageProgram: UIImageView!
     @IBOutlet weak var sinopse: UILabel!
     @IBOutlet weak var programTitle: UILabel!
@@ -22,6 +23,7 @@ class ModalDetailViewController: UIViewController {
         
         if let program = programa{
             imageProgram.image = UIImage(named: program.imageAdress)
+            background.image = UIImage(named: program.imageAdress)
             sinopse.text = program.sinopse
             programTitle.text = program.title
             programDetail.text = program.detail
