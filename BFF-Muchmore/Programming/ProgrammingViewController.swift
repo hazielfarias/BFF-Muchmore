@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ProgrammingViewController: UIViewController, UITableViewDataSource{
+class ProgrammingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet weak var background: UIImageView!
+   
     @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
@@ -20,6 +20,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableProgramming.dataSource = self
+        self.tableProgramming.delegate = self
         /*
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -44,34 +45,27 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource{
         cell.backgroundColor = UIColor.clear
         
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showSinopse))
-        cell.addGestureRecognizer(longPress)
+        
+      
         
         return cell
     }
-
     
-  
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let cell = tableView.cellForRow(at: indexPath)
+        
+            showSinopse(programa: lista[indexPath.row])
+            cell?.isSelected = false
+    }
     
-    @objc func showSinopse(recognizer: UILongPressGestureRecognizer){
-        if recognizer.state == UIGestureRecognizer.State.began{
-            let cell:UITableViewCell = recognizer.view as! UITableViewCell
-           
-            if let indexPath = tableProgramming.indexPath(for: cell){
-                let row = indexPath.row
-                let programa = lista[row]
+    @objc func showSinopse(programa:ProgramData){
+    
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "modalDetail") as! ModalDetailViewController
                 controller.programa = programa
              
                 self.navigationController?.pushViewController(controller, animated: true)
-            
-                
-            }
-            
-            
-            
-        }
+        
     }
     
 }
