@@ -10,6 +10,8 @@ import UIKit
 
 class ProgrammingViewController: UIViewController, UITableViewDataSource{
     
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
     

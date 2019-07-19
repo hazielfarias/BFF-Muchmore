@@ -65,6 +65,8 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="2" height="2"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uge-9v-2zT">
                                                 <rect key="frame" x="0.0" y="359" width="320" height="60"/>
@@ -74,6 +76,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <size key="shadowOffset" width="2" height="2"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hof-ni-Tqb">
                                                 <rect key="frame" x="0.0" y="424" width="320" height="90"/>
@@ -121,6 +125,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home-image" selectedImage="home-image" id="Cwn-uB-kOh"/>
+                    <connections>
+                        <outlet property="background" destination="E7t-Ia-5uw" id="GpN-HO-UOr"/>
+                        <outlet property="programDetail" destination="uge-9v-2zT" id="RFa-5T-IX8"/>
+                        <outlet property="programTitle" destination="dhc-JK-rPR" id="E87-zE-k5e"/>
+                        <outlet property="programTitleTop" destination="jcf-b9-soo" id="vox-bL-vIP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,7 +294,8 @@
                         <color key="badgeColor" name="textColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="background" destination="qNq-IT-QAk" id="qBb-7h-ca0"/>
+                        <outlet property="background" destination="qNq-IT-QAk" id="Gmx-YZ-Mii"/>
+                        <outlet property="programTitleTop" destination="5md-UF-Cvo" id="2hc-M9-Mf6"/>
                         <outlet property="tableProgramming" destination="rl2-X8-Rbi" id="HVb-jA-gmr"/>
                     </connections>
                 </viewController>
@@ -300,11 +311,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-kv-oZK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-kv-oZK">
                                 <rect key="frame" x="0.0" y="-25" width="320" height="593"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-hS-NmS">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-hS-NmS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3j-AS-6p8">
@@ -333,16 +344,16 @@
                                         </constraints>
                                     </view>
                                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-VV-Aol">
-                                        <rect key="frame" x="0.0" y="158" width="320" height="410"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="468"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hzL-ro-gFS">
-                                                <rect key="frame" x="20" y="0.0" width="280" height="410"/>
+                                                <rect key="frame" x="20" y="0.0" width="280" height="468"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yja-3i-vnI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="133"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9IG-Fi-OBL">
-                                                                <rect key="frame" x="20" y="10" width="240" height="60"/>
+                                                                <rect key="frame" x="20" y="10" width="240" height="118"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -354,7 +365,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-r8-iZM">
-                                                        <rect key="frame" x="0.0" y="75" width="280" height="60"/>
+                                                        <rect key="frame" x="0.0" y="133" width="280" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="oGC-gz-6SB"/>
                                                         </constraints>
@@ -363,7 +374,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plt-xK-SBu">
-                                                        <rect key="frame" x="0.0" y="135" width="280" height="25"/>
+                                                        <rect key="frame" x="0.0" y="193" width="280" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="Avz-1m-LTp"/>
                                                         </constraints>
@@ -372,7 +383,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbl-1j-UvE">
-                                                        <rect key="frame" x="0.0" y="160" width="280" height="250"/>
+                                                        <rect key="frame" x="0.0" y="218" width="280" height="250"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="250" id="SAF-dz-wh3"/>
                                                         </constraints>
@@ -422,12 +433,13 @@
                         <outlet property="imageProgram" destination="9IG-Fi-OBL" id="Hqr-SN-hSS"/>
                         <outlet property="programDetail" destination="Plt-xK-SBu" id="FzO-xK-oBB"/>
                         <outlet property="programTitle" destination="4OR-r8-iZM" id="prK-go-Cxj"/>
+                        <outlet property="programTitleTop" destination="Ene-lu-lQI" id="AmE-0n-7TU"/>
                         <outlet property="sinopse" destination="kbl-1j-UvE" id="Myj-C5-Sfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neU-FG-QYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="-600"/>
+            <point key="canvasLocation" x="832.5" y="-600"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p8v-Bf-OAb">

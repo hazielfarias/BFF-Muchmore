@@ -10,6 +10,7 @@ import UIKit
 
 class ModalDetailViewController: UIViewController {
 
+    @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var imageProgram: UIImageView!
     @IBOutlet weak var sinopse: UILabel!
