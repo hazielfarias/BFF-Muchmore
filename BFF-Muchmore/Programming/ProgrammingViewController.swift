@@ -15,6 +15,8 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
     
+     var timer = Timer()
+    
     let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue"), ProgramData(title: "Programa da madruga com nome grande", detail: "Começa as 20h termina as 8h", imageAdress: "capa-teste.jpg", sinopse: "uni duni tê salame mingue oajsdiasdijaisd asjdiadjsia iajsdiajds ajsdiasd aisdj iasdjiasdj iajsdioasdjáiosdjaios aisdj aisdjai sdaisdjaisdj aa sdia sidjaiosdj asidj asdjaisd aisdj")]
     
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableProgramming.dataSource = self
         self.tableProgramming.delegate = self
         self.loadPage()
+        self.atualizar()
         /*
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -69,7 +72,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
-    func loadPage(){
+    @objc func loadPage(){
         let url = URL(string: "https://data.bff.fm/nowplaying.txt")
         let contentString = try! NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
         let msgStringFull:Array<String> = contentString.components(separatedBy: "\n")
@@ -94,5 +97,10 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
     }
+   
     
+    func atualizar(){
+        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
+        
+    }
 }

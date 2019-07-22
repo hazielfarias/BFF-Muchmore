@@ -15,12 +15,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var programTitle: UILabel!
     @IBOutlet weak var programDetail: UILabel!
     
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadPage()
+        self.atualizar()
     }
 
-    func loadPage(){
+  
+    
+    
+    @objc func loadPage(){
         let url = URL(string: "https://data.bff.fm/nowplaying.txt")
         let contentString = try! NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
         let msgStringFull:Array<String> = contentString.components(separatedBy: "\n")
@@ -49,5 +55,15 @@ class HomeViewController: UIViewController {
         }
         
     }
+    
+     func atualizar(){
+     self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
+     
+     }
+    
 }
+    
+    
+    
+
 
