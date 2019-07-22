@@ -15,7 +15,10 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
     
-     var timer = Timer()
+   
+    var timer = Timer()
+    
+    var flag = false
     
     let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue"), ProgramData(title: "Programa da madruga com nome grande", detail: "Começa as 20h termina as 8h", imageAdress: "capa-teste.jpg", sinopse: "uni duni tê salame mingue oajsdiasdijaisd asjdiadjsia iajsdiajds ajsdiasd aisdj iasdjiasdj iajsdioasdjáiosdjaios aisdj aisdjai sdaisdjaisdj aa sdia sidjaiosdj asidj asdjaisd aisdj")]
     
@@ -24,7 +27,10 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableProgramming.dataSource = self
         self.tableProgramming.delegate = self
         self.loadPage()
-        self.atualizar()
+        if flag == false{
+            self.flag = true
+            self.atualizar()
+        }
         /*
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -95,7 +101,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
             background.image = UIImage(data: data)
             
         }
-        
+      
     }
    
     

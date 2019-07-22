@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ModalDetailViewController: UIViewController {
 
     @IBOutlet weak var programTitleTop: UILabel!
@@ -19,7 +20,9 @@ class ModalDetailViewController: UIViewController {
     
     var programa:ProgramData? = nil
     
-    var timer = Timer()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,7 @@ class ModalDetailViewController: UIViewController {
         }
         
         self.loadPage()
-        self.atualizar()
+     
        
     }
     
@@ -56,14 +59,10 @@ class ModalDetailViewController: UIViewController {
         let textDetail = detail.joined()
         
         self.programTitleTop.text = textTitle + " -" + textDetail
-        
       
-        
+      
     }
 
-    func atualizar(){
-        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
-        
-    }
+    
     
 }

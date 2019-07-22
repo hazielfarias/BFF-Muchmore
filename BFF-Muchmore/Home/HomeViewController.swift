@@ -17,10 +17,16 @@ class HomeViewController: UIViewController {
     
     var timer = Timer()
     
+    var flag = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadPage()
-        self.atualizar()
+        if flag == false{
+            flag = true
+            self.atualizar()
+            
+        }
     }
 
   
@@ -53,11 +59,15 @@ class HomeViewController: UIViewController {
             background.image = UIImage(data: data)
             
         }
-        
+       
     }
     
+ 
+    
      func atualizar(){
-     self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
+        
+        
      
      }
     
