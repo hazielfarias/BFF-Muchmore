@@ -17,9 +17,37 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loadPage()
     }
 
-
+    func loadPage(){
+        let url = URL(string: "https://data.bff.fm/nowplaying.txt")
+        let contentString = try! NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
+        let msgStringFull:Array<String> = contentString.components(separatedBy: "\n")
+        var title = msgStringFull[0].components(separatedBy: ":")
+        title.remove(at: 0)
+        let textTitle = title.joined()
+        var detail = msgStringFull[1].components(separatedBy: ":")
+        detail.remove(at: 0)
+        let textDetail = detail.joined()
+        let complement = msgStringFull[2]
+        
+        
+        self.programTitle.text = textTitle
+        self.programTitleTop.text = textTitle + " -" + textDetail
+        self.programDetail.text = textDetail + "\n" + complement
+        
+        var image = msgStringFull[4].components(separatedBy: ":")
+        image.remove(at: 0)
+        image[0]=image[0]+":"
+        let imageUrl = image.joined().replacingOccurrences(of: " ", with: "")
+        let url2 = URL(string: imageUrl)
+        
+        if let data = try? Data(contentsOf: url2!){ //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            background.image = UIImage(data: data)
+            
+        }
+        
+    }
 }
 
