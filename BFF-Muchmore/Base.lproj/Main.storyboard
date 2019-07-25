@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capa-teste.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ia-5uw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-wfmu" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ia-5uw">
                                 <rect key="frame" x="0.0" y="-25" width="320" height="544"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -76,6 +76,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hof-ni-Tqb">
                                                 <rect key="frame" x="0.0" y="424" width="320" height="90"/>
                                                 <subviews>
+                                                    <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDz-R2-hWG">
+                                                        <rect key="frame" x="151" y="36" width="19" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </webView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1w-Oa-inO">
                                                         <rect key="frame" x="115" y="0.0" width="90" height="90"/>
                                                         <constraints>
@@ -83,6 +88,9 @@
                                                             <constraint firstAttribute="height" constant="90" id="rga-ep-H5a"/>
                                                         </constraints>
                                                         <state key="normal" image="play"/>
+                                                        <connections>
+                                                            <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRu-3m-AdB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,14 +129,16 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home-image" selectedImage="home-image" id="Cwn-uB-kOh"/>
                     <connections>
                         <outlet property="background" destination="E7t-Ia-5uw" id="GpN-HO-UOr"/>
+                        <outlet property="buttonPlayPause" destination="T1w-Oa-inO" id="Fql-k0-5LE"/>
                         <outlet property="programDetail" destination="uge-9v-2zT" id="RFa-5T-IX8"/>
                         <outlet property="programTitle" destination="dhc-JK-rPR" id="E87-zE-k5e"/>
                         <outlet property="programTitleTop" destination="jcf-b9-soo" id="vox-bL-vIP"/>
+                        <outlet property="webView" destination="WDz-R2-hWG" id="A0W-ZW-mSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1383" y="167"/>
+            <point key="canvasLocation" x="-1383.75" y="166.90140845070422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W12-xx-aye">
@@ -160,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capa-teste.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-IT-QAk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-wfmu" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-IT-QAk">
                                 <rect key="frame" x="0.0" y="-25" width="320" height="544"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -456,7 +466,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="capa-teste.jpg" width="1974" height="2560"/>
+        <image name="background-wfmu" width="546" height="708"/>
         <image name="home-image" width="30" height="30"/>
         <image name="icon_back.png" width="50" height="50"/>
         <image name="play" width="70" height="70"/>

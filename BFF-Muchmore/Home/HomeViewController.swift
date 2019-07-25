@@ -10,28 +10,42 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var buttonPlayPause: UIButton!
+    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var programTitle: UILabel!
     @IBOutlet weak var programDetail: UILabel!
     
-    var timer = Timer()
-    
-    var flag = false
-    
+    var flag = true
+    var url = URL(string: "http://stream0.wfmu.org/freeform-128k.mp3")
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadPage()
-        if flag == false{
-            flag = true
-            self.atualizar()
-            
-        }
+        //self.loadPage()
+        self.runningRadio(url!)
+        
+        
     }
 
-  
+    @IBAction func playPause(_ sender: UIButton) {
+        if flag == true {
+            flag = false
+            webView.stopLoading()
+           
+            
+        }else{
+            flag = true
+            webView.reload()
+        }
+    }
     
-    
+    func runningRadio(_ url:URL){
+        webView.loadRequest(URLRequest(url: url))
+        webView.scrollView.bounces = false
+    }
+
+    /*
     @objc func loadPage(){
         let url = URL(string: "https://data.bff.fm/nowplaying.txt")
         let contentString = try! NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
@@ -55,21 +69,15 @@ class HomeViewController: UIViewController {
         let imageUrl = image.joined().replacingOccurrences(of: " ", with: "")
         let url2 = URL(string: imageUrl)
         
-        if let data = try? Data(contentsOf: url2!){ //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        if let data = try? Data(contentsOf: url2!){
+            
             background.image = UIImage(data: data)
             
         }
        
     }
+     */
     
- 
-    
-     func atualizar(){
-        self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(loadPage), userInfo: nil, repeats: true)
-        
-        
-     
-     }
     
 }
     

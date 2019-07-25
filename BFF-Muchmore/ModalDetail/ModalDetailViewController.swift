@@ -35,7 +35,7 @@ class ModalDetailViewController: UIViewController {
             programDetail.text = program.detail
         }
         
-        self.loadPage()
+        //self.loadPage()
      
        
     }
@@ -46,7 +46,7 @@ class ModalDetailViewController: UIViewController {
         }
         
     }
-    
+    /*
     @objc func loadPage(){
         let url = URL(string: "https://data.bff.fm/nowplaying.txt")
         let contentString = try! NSString(contentsOf: url!, encoding: String.Encoding.utf8.rawValue)
@@ -61,7 +61,7 @@ class ModalDetailViewController: UIViewController {
         self.programTitleTop.text = textTitle + " -" + textDetail
       
       
-    }
+    }*/
 
     
     
