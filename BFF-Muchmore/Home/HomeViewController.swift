@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var buttonPlayPause: UIButton!
@@ -18,31 +18,31 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var programDetail: UILabel!
     
     var flag = true
-    var url = URL(string: "http://stream0.wfmu.org/freeform-128k.mp3")
-   
+    //var url = URL(string: "http://stream0.wfmu.org/freeform-high.aac")
+    let url = "http://stream0.wfmu.org/freeform-high.aac"
+    var player = AVPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.loadPage()
-        self.runningRadio(url!)
-        
-        
+        let playerItem = AVPlayerItem( url:NSURL( string:url )! as URL )
+        player = AVPlayer(playerItem:playerItem)
+        player.rate = 1.0;
+        player.play()
+
     }
 
     @IBAction func playPause(_ sender: UIButton) {
         if flag == true {
             flag = false
-            webView.stopLoading()
-           
+            //webView.stopLoading()
+           player.pause()
             
         }else{
             flag = true
-            webView.reload()
+            player.play()
+            //webView.reload()
         }
-    }
-    
-    func runningRadio(_ url:URL){
-        webView.loadRequest(URLRequest(url: url))
-        webView.scrollView.bounces = false
     }
 
     /*
