@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var programDetail: UILabel!
     
     var flag = true
-    //var url = URL(string: "http://stream0.wfmu.org/freeform-high.aac")
+    
     let url = "http://stream0.wfmu.org/freeform-high.aac"
     var player = AVPlayer()
     
@@ -35,13 +35,13 @@ class HomeViewController: UIViewController {
     @IBAction func playPause(_ sender: UIButton) {
         if flag == true {
             flag = false
-            //webView.stopLoading()
+           
            player.pause()
             
         }else{
             flag = true
             player.play()
-            //webView.reload()
+            
         }
     }
 
