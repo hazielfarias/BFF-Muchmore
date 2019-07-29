@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ProgrammingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -15,7 +16,6 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
     
-   
     
     
   
@@ -28,7 +28,6 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableProgramming.delegate = self
       
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lista.count
