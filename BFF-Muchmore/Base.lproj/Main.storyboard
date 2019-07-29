@@ -54,20 +54,12 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKt-aq-Phh">
-                                                <rect key="frame" x="0.0" y="105" width="320" height="230.5"/>
+                                                <rect key="frame" x="0.0" y="105" width="320" height="271"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-JK-rPR">
-                                                <rect key="frame" x="0.0" y="340.5" width="320" height="41.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="2" height="2"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uge-9v-2zT">
-                                                <rect key="frame" x="0.0" y="387" width="320" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-JK-rPR">
+                                                <rect key="frame" x="0.0" y="381" width="320" height="38"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +117,6 @@
                     <connections>
                         <outlet property="background" destination="E7t-Ia-5uw" id="GpN-HO-UOr"/>
                         <outlet property="buttonPlayPause" destination="T1w-Oa-inO" id="Fql-k0-5LE"/>
-                        <outlet property="programDetail" destination="uge-9v-2zT" id="RFa-5T-IX8"/>
                         <outlet property="programTitle" destination="dhc-JK-rPR" id="E87-zE-k5e"/>
                         <outlet property="programTitleTop" destination="jcf-b9-soo" id="vox-bL-vIP"/>
                     </connections>
