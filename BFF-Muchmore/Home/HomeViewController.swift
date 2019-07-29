@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
     }
     
     func reload() {
+        self.programTitle.text = "Loading..."
+        self.programTitleTop.text = "Loading..."
         player.currentItem?.removeObserver(self, forKeyPath: "timedMetadata", context: nil)
         player.replaceCurrentItem(with: generatePlayerItem())
         player.play()
@@ -54,6 +56,8 @@ class HomeViewController: UIViewController {
         if flagPlay == true {
             flagPlay = false
             player.pause()
+            self.programTitle.text = "-"
+            self.programTitleTop.text = "-"
             buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         }else{
             flagPlay = true
