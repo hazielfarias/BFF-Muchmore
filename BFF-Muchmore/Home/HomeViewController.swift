@@ -13,7 +13,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonPlayPause: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var programTitleTop: UILabel!
-    @IBOutlet weak var programTitle: UILabel!
+    @IBOutlet weak var trackTitle: UILabel!
+    @IBOutlet var artist: UILabel!
+    @IBOutlet var program: UILabel!
     
     var flagPlay = true
     let url = "http://stream0.wfmu.org/freeform-high.aac"
@@ -32,7 +34,7 @@ class HomeViewController: UIViewController {
     }
     
     func reload() {
-        self.programTitle.text = "Loading..."
+        self.trackTitle.text = "Loading..."
         self.programTitleTop.text = "Loading..."
         player.currentItem?.removeObserver(self, forKeyPath: "timedMetadata", context: nil)
         player.replaceCurrentItem(with: generatePlayerItem())
@@ -45,9 +47,22 @@ class HomeViewController: UIViewController {
         let data: AVPlayerItem = object as! AVPlayerItem
         if data.timedMetadata != nil {
             for item in data.timedMetadata! {
+                let itemValor = item.value as! NSString
+                var metadataList:Array<String> = itemValor.components(separatedBy: " on WFMU on ")
+                let bandTrack = metadataList[0].components(separatedBy: "\" by ")
+                var track = bandTrack[0]
+                
+                if track.starts(with: "\"") {
+                    track.remove(at: track.startIndex)
+                }
+                
+                
                 print("Playing now: \(item.value!)")
-                self.programTitle.text = (item.value! as! String)
-                self.programTitleTop.text = (item.value! as! String)
+                
+                self.trackTitle.text = track
+                self.artist.text = bandTrack[1]
+                self.program.text = metadataList[1]
+                self.programTitleTop.text = (track)
             }
         }
     }
@@ -56,7 +71,9 @@ class HomeViewController: UIViewController {
         if flagPlay == true {
             flagPlay = false
             player.pause()
-            self.programTitle.text = "-"
+            self.program.text = ""
+            self.artist.text = ""
+            self.trackTitle.text = "-"
             self.programTitleTop.text = "-"
             buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         }else{
