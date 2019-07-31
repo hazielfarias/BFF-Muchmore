@@ -61,6 +61,8 @@ class HomeViewController: UIViewController {
                 let itemValor = item.value as! NSString
                 var metadataList:Array<String> = itemValor.components(separatedBy: " on WFMU on ")
                 print("Playing now: \(item.value!)")
+                
+                if metadataList.count == 2{
                 let bandTrack:Array<String> = metadataList[0].components(separatedBy: "\" by ")
                 if bandTrack.count == 2{
                 var track = bandTrack[0]
@@ -71,8 +73,6 @@ class HomeViewController: UIViewController {
                 
                 self.trackTitle.text = track
                 self.artist.text = bandTrack[1]
-                
-                
                 self.programTitleTop.text = track
                 playingNowGlobal=track
                 }
@@ -83,7 +83,16 @@ class HomeViewController: UIViewController {
                     self.trackTitle.text = track
                     self.artist.text = ""
                 }
-                self.program.text = metadataList[1]
+                    self.program.text = metadataList[1]
+                    
+                }
+                else{
+                    self.trackTitle.text = metadataList[0]
+                    self.artist.text = ""
+                    self.program.text = ""
+                    self.programTitleTop.text = metadataList[0]
+                    playingNowGlobal=metadataList[0]
+                }
             }
         }
     }
