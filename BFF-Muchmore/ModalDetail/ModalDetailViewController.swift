@@ -20,10 +20,6 @@ class ModalDetailViewController: UIViewController {
     
     var programa:ProgramData? = nil
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,9 +30,6 @@ class ModalDetailViewController: UIViewController {
             programTitle.text = program.title
             programDetail.text = program.detail
         }
-        
-        
-     
        
     }
     

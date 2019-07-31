@@ -49,20 +49,28 @@ class HomeViewController: UIViewController {
             for item in data.timedMetadata! {
                 let itemValor = item.value as! NSString
                 var metadataList:Array<String> = itemValor.components(separatedBy: " on WFMU on ")
-                let bandTrack = metadataList[0].components(separatedBy: "\" by ")
+                print("Playing now: \(item.value!)")
+                let bandTrack:Array<String> = metadataList[0].components(separatedBy: "\" by ")
+                if bandTrack.count == 2{
                 var track = bandTrack[0]
                 
                 if track.starts(with: "\"") {
                     track.remove(at: track.startIndex)
                 }
                 
-                
-                print("Playing now: \(item.value!)")
-                
                 self.trackTitle.text = track
                 self.artist.text = bandTrack[1]
+                
+                
+                self.programTitleTop.text = track
+                }
+                else{
+                    let track = bandTrack[0]
+                    self.programTitleTop.text = track
+                    self.trackTitle.text = track
+                    self.artist.text = ""
+                }
                 self.program.text = metadataList[1]
-                self.programTitleTop.text = (track)
             }
         }
     }
@@ -71,8 +79,8 @@ class HomeViewController: UIViewController {
         if flagPlay == true {
             flagPlay = false
             player.pause()
-            self.program.text = ""
-            self.artist.text = ""
+            self.program.text = " "
+            self.artist.text = " "
             self.trackTitle.text = "-"
             self.programTitleTop.text = "-"
             buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
@@ -83,8 +91,3 @@ class HomeViewController: UIViewController {
         }
     }
 }
-    
-    
-    
-
-

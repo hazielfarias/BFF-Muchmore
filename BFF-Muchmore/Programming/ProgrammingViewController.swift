@@ -15,10 +15,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
-    
-    
-    
-  
+
     
     let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue")]
     

@@ -58,7 +58,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-JK-rPR">
-                                                <rect key="frame" x="0.0" y="226" width="320" height="139"/>
+                                                <rect key="frame" x="0.0" y="226" width="320" height="144"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -66,8 +66,8 @@
                                                 <size key="shadowOffset" width="2" height="2"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAb-3S-WvM">
-                                                <rect key="frame" x="0.0" y="364" width="320" height="31"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <rect key="frame" x="0.0" y="369" width="320" height="26"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -331,25 +331,17 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3j-AS-6p8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS5-gl-mXv">
-                                                <rect key="frame" x="95" y="41.5" width="130.5" height="27.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Program Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ene-lu-lQI">
-                                                <rect key="frame" x="105.5" y="71" width="109" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS5-gl-mXv">
+                                                <rect key="frame" x="113" y="37.5" width="94" height="35"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.13251819349315069" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Ene-lu-lQI" firstAttribute="top" secondItem="DS5-gl-mXv" secondAttribute="bottom" constant="2" id="1ev-oA-lUY"/>
                                             <constraint firstItem="DS5-gl-mXv" firstAttribute="centerY" secondItem="U3j-AS-6p8" secondAttribute="centerY" constant="5" id="VgV-D8-lGY"/>
                                             <constraint firstAttribute="height" constant="100" id="ZD1-Gv-wdy"/>
-                                            <constraint firstItem="Ene-lu-lQI" firstAttribute="centerX" secondItem="U3j-AS-6p8" secondAttribute="centerX" id="lt7-Bd-CfC"/>
                                             <constraint firstItem="DS5-gl-mXv" firstAttribute="centerX" secondItem="U3j-AS-6p8" secondAttribute="centerX" id="m3j-ic-RSb"/>
                                         </constraints>
                                     </view>
@@ -443,7 +435,6 @@
                         <outlet property="imageProgram" destination="9IG-Fi-OBL" id="Hqr-SN-hSS"/>
                         <outlet property="programDetail" destination="Plt-xK-SBu" id="FzO-xK-oBB"/>
                         <outlet property="programTitle" destination="4OR-r8-iZM" id="prK-go-Cxj"/>
-                        <outlet property="programTitleTop" destination="Ene-lu-lQI" id="AmE-0n-7TU"/>
                         <outlet property="sinopse" destination="kbl-1j-UvE" id="Myj-C5-Sfp"/>
                     </connections>
                 </viewController>
