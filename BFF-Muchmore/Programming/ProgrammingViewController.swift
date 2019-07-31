@@ -16,6 +16,7 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableProgramming: UITableView!
     @IBOutlet weak var background: UIImageView!
 
+    private var observer: NSObjectProtocol!
     
     let lista:Array<ProgramData> = [ProgramData(title: "Programa diário", detail: "Começa as 8h termina as 20h", imageAdress: "imagem-programa.png", sinopse: "uni duni tê salame mingue")]
     
@@ -23,8 +24,20 @@ class ProgrammingViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         self.tableProgramming.dataSource = self
         self.tableProgramming.delegate = self
-      
+        self.programTitleTop.text = playingNowGlobal
+        observer = NotificationCenter.default.addObserver(forName: .globalVariableChanged, object: nil, queue: .main) { [weak self] notification in
+            // do something with globalVariable here
+            self?.programTitleTop.text = playingNowGlobal
+        }
     }
+    
+    deinit {
+        // remember to remove it when this object is deallocated
+        NotificationCenter.default.removeObserver(observer!)
+    }
+
+      
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lista.count

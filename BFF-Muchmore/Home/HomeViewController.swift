@@ -6,6 +6,16 @@
 //  Copyright © 2019 Haziel. All rights reserved.
 //
 
+extension NSNotification.Name {
+    static let globalVariableChanged = NSNotification.Name(Bundle.main.bundleIdentifier! + ".globalVariable")
+}
+
+var playingNowGlobal: String = "-" {
+    didSet {
+        NotificationCenter.default.post(name: .globalVariableChanged, object: nil)
+    }
+}
+
 import UIKit
 import AVFoundation
 class HomeViewController: UIViewController {
@@ -36,6 +46,7 @@ class HomeViewController: UIViewController {
     func reload() {
         self.trackTitle.text = "Loading..."
         self.programTitleTop.text = "Loading..."
+        playingNowGlobal="Loading..."
         player.currentItem?.removeObserver(self, forKeyPath: "timedMetadata", context: nil)
         player.replaceCurrentItem(with: generatePlayerItem())
         player.play()
@@ -63,9 +74,11 @@ class HomeViewController: UIViewController {
                 
                 
                 self.programTitleTop.text = track
+                playingNowGlobal=track
                 }
                 else{
                     let track = bandTrack[0]
+                    playingNowGlobal=track
                     self.programTitleTop.text = track
                     self.trackTitle.text = track
                     self.artist.text = ""
@@ -83,6 +96,7 @@ class HomeViewController: UIViewController {
             self.artist.text = " "
             self.trackTitle.text = "-"
             self.programTitleTop.text = "-"
+            playingNowGlobal="-"
             buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         }else{
             flagPlay = true
