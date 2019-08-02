@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var artist: UILabel!
     @IBOutlet var program: UILabel!
     
+
     var flagPlay = true
     let url = "http://stream0.wfmu.org/freeform-high.aac"
     var player = AVPlayer()
@@ -36,22 +37,24 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setSession()
-        //UIApplication.shared.beginReceivingRemoteControlEvents()
         setupMediaCommands()
         player = AVPlayer(playerItem:generatePlayerItem())
         player.play()
-        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
+                                                         MPMediaItemPropertyArtist: program.text ?? " "
+        ]
         
     }
     
+   
     func setSession(){
         do{
-            //try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .mixWithOthers])
+            
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             print("Playback OK")
             try AVAudioSession.sharedInstance().setActive(true)
             print("Session Active")
-            //try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+           
         }catch{
             print(error.localizedDescription)
         }
@@ -61,24 +64,19 @@ class HomeViewController: UIViewController {
         
         commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             //Update your button here for the pause command
-            print("pause")
-            
+            print("Paused by remote controls")
+            self.pauseButton()
             return .success
         }
         
         commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             //Update your button here for the play command
-            print("play")
-            
+            print("Played by remote controls")
+            self.playButton()
             return .success
         }
     }
-    /*
-    func setupNotificationView(){
-        let nowPlayingInfo:MPNowPlayingInfoCenter
-        
-    }
-    */
+    
     func generatePlayerItem() -> AVPlayerItem{
         let playerItem = AVPlayerItem( url:NSURL( string:url )! as URL )
         playerItem.addObserver(self, forKeyPath: "timedMetadata", options: NSKeyValueObservingOptions(), context: nil)
@@ -89,6 +87,9 @@ class HomeViewController: UIViewController {
         self.trackTitle.text = "Loading..."
         self.programTitleTop.text = "Loading..."
         playingNowGlobal="Loading..."
+        MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
+                                                         MPMediaItemPropertyArtist: program.text ?? " "
+        ]
         player.currentItem?.removeObserver(self, forKeyPath: "timedMetadata", context: nil)
         player.replaceCurrentItem(with: generatePlayerItem())
         player.play()
@@ -135,6 +136,9 @@ class HomeViewController: UIViewController {
                     self.programTitleTop.text = metadataList[0]
                     playingNowGlobal=metadataList[0]
                 }
+                MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
+                                                                 MPMediaItemPropertyArtist: program.text ?? " "
+                ]
             }
         }
     }
@@ -162,24 +166,10 @@ class HomeViewController: UIViewController {
         self.programTitleTop.text = "-"
         playingNowGlobal="-"
         buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
+        MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
+                                                         MPMediaItemPropertyArtist: program.text ?? " "
+        ]
     }
-    
-    
-    /*
-    override func remoteControlReceived(with event: UIEvent?) {
-        let rc = event!.subtype
-        print("rc.rawValue: \(rc.rawValue)")
-        if event!.type == UIEvent.EventType.remoteControl{
-            if event!.subtype == UIEvent.EventSubtype.remoteControlPause{
-                print("pause")
-                pauseButton()
-              
-            }
-            if event!.subtype == UIEvent.EventSubtype.remoteControlPlay{
-                print("play")
-                playButton()
-            }}
-    }*/
     
     
     
