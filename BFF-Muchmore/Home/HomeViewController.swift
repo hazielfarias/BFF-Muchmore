@@ -18,6 +18,8 @@ var playingNowGlobal: String = "-" {
 
 import UIKit
 import AVFoundation
+import MediaPlayer
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var buttonPlayPause: UIButton!
@@ -30,30 +32,53 @@ class HomeViewController: UIViewController {
     var flagPlay = true
     let url = "http://stream0.wfmu.org/freeform-high.aac"
     var player = AVPlayer()
-    
+    let commandCenter = MPRemoteCommandCenter.shared()
     override func viewDidLoad() {
         super.viewDidLoad()
         setSession()
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-        becomeFirstResponder()
+        //UIApplication.shared.beginReceivingRemoteControlEvents()
+        setupMediaCommands()
         player = AVPlayer(playerItem:generatePlayerItem())
         player.play()
-    }
-    
-    override func becomeFirstResponder() -> Bool {
-        return true
+        
+        
     }
     
     func setSession(){
         do{
-            try AVAudioSession.sharedInstance().setCategory(.soloAmbient, mode: .default, options: .allowAirPlay)
-            try AVAudioSession.sharedInstance().setActive(true)
+            //try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.allowAirPlay, .mixWithOthers])
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session Active")
+            //try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         }catch{
             print(error.localizedDescription)
         }
     }
     
+    func setupMediaCommands(){
+        
+        commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            //Update your button here for the pause command
+            print("pause")
+            
+            return .success
+        }
+        
+        commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            //Update your button here for the play command
+            print("play")
+            
+            return .success
+        }
+    }
+    /*
+    func setupNotificationView(){
+        let nowPlayingInfo:MPNowPlayingInfoCenter
+        
+    }
+    */
     func generatePlayerItem() -> AVPlayerItem{
         let playerItem = AVPlayerItem( url:NSURL( string:url )! as URL )
         playerItem.addObserver(self, forKeyPath: "timedMetadata", options: NSKeyValueObservingOptions(), context: nil)
@@ -121,6 +146,7 @@ class HomeViewController: UIViewController {
             playButton()
         }
     }
+    
     func playButton(){
         flagPlay = true
         buttonPlayPause.setImage(UIImage(named: "pause.png"), for: UIControl.State.normal)
@@ -138,16 +164,24 @@ class HomeViewController: UIViewController {
         buttonPlayPause.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
     }
     
+    
+    /*
     override func remoteControlReceived(with event: UIEvent?) {
+        let rc = event!.subtype
+        print("rc.rawValue: \(rc.rawValue)")
         if event!.type == UIEvent.EventType.remoteControl{
             if event!.subtype == UIEvent.EventSubtype.remoteControlPause{
                 print("pause")
                 pauseButton()
+              
             }
-            else if event!.subtype == UIEvent.EventSubtype.remoteControlPlay{
+            if event!.subtype == UIEvent.EventSubtype.remoteControlPlay{
                 print("play")
                 playButton()
             }}
-    }
+    }*/
+    
+    
+    
     
 }

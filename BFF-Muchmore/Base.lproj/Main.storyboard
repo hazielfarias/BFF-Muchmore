@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-wfmu" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ia-5uw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-novo" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ia-5uw">
                                 <rect key="frame" x="0.0" y="-25" width="320" height="544"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -173,7 +173,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-wfmu" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-IT-QAk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-novo" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-IT-QAk">
                                 <rect key="frame" x="0.0" y="-25" width="320" height="544"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -460,7 +460,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background-wfmu" width="546" height="708"/>
+        <image name="background-novo" width="1024" height="1570"/>
         <image name="home-image" width="30" height="30"/>
         <image name="icon_back.png" width="50" height="50"/>
         <image name="pause" width="70" height="70"/>

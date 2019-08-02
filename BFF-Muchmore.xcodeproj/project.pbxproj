@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310F85A222F4968B00C1E569 /* background-novo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 310F85A122F4968B00C1E569 /* background-novo.jpg */; };
 		311A4A3E22DF5298001CB461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A4A3D22DF5298001CB461 /* AppDelegate.swift */; };
 		311A4A4022DF5298001CB461 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A4A3F22DF5298001CB461 /* HomeViewController.swift */; };
 		311A4A4322DF5298001CB461 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A4122DF5298001CB461 /* Main.storyboard */; };
@@ -19,9 +20,7 @@
 		311A4A8322DF6C08001CB461 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A4A8222DF6C08001CB461 /* TableViewCell.swift */; };
 		311A4A8D22DF7447001CB461 /* imagem-programa.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8522DF7447001CB461 /* imagem-programa.png */; };
 		311A4A8E22DF7447001CB461 /* home-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8622DF7447001CB461 /* home-image.png */; };
-		311A4A8F22DF7447001CB461 /* logo-principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8722DF7447001CB461 /* logo-principal.png */; };
 		311A4A9122DF7447001CB461 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8922DF7447001CB461 /* list-fat-7.png */; };
-		311A4A9222DF7447001CB461 /* logo-branca.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8A22DF7447001CB461 /* logo-branca.png */; };
 		31E8C72322E0C197002A0242 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E8C72222E0C197002A0242 /* icon_back.png */; };
 		6901CFAF22E9403C0000DAD2 /* logo-wfmu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */; };
 		6901CFB022E9403C0000DAD2 /* background-wfmu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6901CFAE22E9403C0000DAD2 /* background-wfmu.jpg */; };
@@ -48,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		310F85A122F4968B00C1E569 /* background-novo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-novo.jpg"; sourceTree = "<group>"; };
 		311A4A3A22DF5298001CB461 /* BFF-Muchmore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BFF-Muchmore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		311A4A3D22DF5298001CB461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		311A4A3F22DF5298001CB461 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +66,7 @@
 		311A4A8222DF6C08001CB461 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		311A4A8522DF7447001CB461 /* imagem-programa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imagem-programa.png"; sourceTree = "<group>"; };
 		311A4A8622DF7447001CB461 /* home-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-image.png"; sourceTree = "<group>"; };
-		311A4A8722DF7447001CB461 /* logo-principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-principal.png"; sourceTree = "<group>"; };
 		311A4A8922DF7447001CB461 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
-		311A4A8A22DF7447001CB461 /* logo-branca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-branca.png"; sourceTree = "<group>"; };
 		31E8C72222E0C197002A0242 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
 		6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-wfmu.png"; sourceTree = "<group>"; };
 		6901CFAE22E9403C0000DAD2 /* background-wfmu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-wfmu.jpg"; sourceTree = "<group>"; };
@@ -189,12 +187,11 @@
 				6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */,
 				311A4A8522DF7447001CB461 /* imagem-programa.png */,
 				311A4A8622DF7447001CB461 /* home-image.png */,
+				310F85A122F4968B00C1E569 /* background-novo.jpg */,
 				6940D8B222DFC51B00669E97 /* pause.png */,
 				6940D8B122DFC51B00669E97 /* play.png */,
 				31E8C72222E0C197002A0242 /* icon_back.png */,
-				311A4A8722DF7447001CB461 /* logo-principal.png */,
 				311A4A8922DF7447001CB461 /* list-fat-7.png */,
-				311A4A8A22DF7447001CB461 /* logo-branca.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -320,12 +317,11 @@
 				311A4A9122DF7447001CB461 /* list-fat-7.png in Resources */,
 				6901CFB022E9403C0000DAD2 /* background-wfmu.jpg in Resources */,
 				6940D8B422DFC51B00669E97 /* pause.png in Resources */,
-				311A4A9222DF7447001CB461 /* logo-branca.png in Resources */,
 				31E8C72322E0C197002A0242 /* icon_back.png in Resources */,
+				310F85A222F4968B00C1E569 /* background-novo.jpg in Resources */,
 				311A4A8E22DF7447001CB461 /* home-image.png in Resources */,
 				311A4A4822DF529A001CB461 /* LaunchScreen.storyboard in Resources */,
 				6940D8B322DFC51B00669E97 /* play.png in Resources */,
-				311A4A8F22DF7447001CB461 /* logo-principal.png in Resources */,
 				6901CFAF22E9403C0000DAD2 /* logo-wfmu.png in Resources */,
 				311A4A7022DF59B4001CB461 /* Assets.xcassets in Resources */,
 				311A4A4322DF5298001CB461 /* Main.storyboard in Resources */,
@@ -536,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93JXUPK2SQ;
 				INFOPLIST_FILE = "BFF-Muchmore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,6 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93JXUPK2SQ;
 				INFOPLIST_FILE = "BFF-Muchmore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
