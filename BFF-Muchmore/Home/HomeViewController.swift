@@ -136,8 +136,11 @@ class HomeViewController: UIViewController {
                     self.programTitleTop.text = metadataList[0]
                     playingNowGlobal=metadataList[0]
                 }
+                let a = MPMediaItemArtwork.init(image: UIImage.init(named: "imagem-programa.png")!)
                 MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
-                                                                 MPMediaItemPropertyArtist: program.text ?? " "
+                                                                 MPMediaItemPropertyArtist: artist.text ?? "" ,
+                                                                 MPMediaItemPropertyAlbumTitle: program.text ?? "-",
+                                                                 MPMediaItemPropertyArtwork: a
                 ]
             }
         }
