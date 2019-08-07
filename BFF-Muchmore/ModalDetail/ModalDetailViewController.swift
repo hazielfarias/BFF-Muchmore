@@ -1,6 +1,6 @@
 //
 //  ModalDetailViewController.swift
-//  BFF-Muchmore
+//  WFMU-TDS
 //
 //  Created by Haziel Farias on 17/07/19.
 //  Copyright © 2019 Haziel. All rights reserved.
@@ -11,7 +11,6 @@ import UIKit
 
 class ModalDetailViewController: UIViewController {
 
-    @IBOutlet weak var programTitleTop: UILabel!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var imageProgram: UIImageView!
     @IBOutlet weak var sinopse: UILabel!

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  BFF-Muchmore
+//  WFMU-TDS
 //
 //  Created by Haziel Leite Farias on 17/07/19.
 //  Copyright © 2019 Haziel. All rights reserved.
@@ -136,11 +136,11 @@ class HomeViewController: UIViewController {
                     self.programTitleTop.text = metadataList[0]
                     playingNowGlobal=metadataList[0]
                 }
-                let a = MPMediaItemArtwork.init(image: UIImage.init(named: "imagem-programa.png")!)
+                let imagemAlbum = MPMediaItemArtwork.init(image: UIImage.init(named: "logo-background.png")!)
                 MPNowPlayingInfoCenter.default().nowPlayingInfo=[MPMediaItemPropertyTitle: playingNowGlobal,
                                                                  MPMediaItemPropertyArtist: artist.text ?? "" ,
                                                                  MPMediaItemPropertyAlbumTitle: program.text ?? "-",
-                                                                 MPMediaItemPropertyArtwork: a
+                                                                 MPMediaItemPropertyArtwork: imagemAlbum
                 ]
             }
         }

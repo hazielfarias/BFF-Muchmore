@@ -21,6 +21,8 @@
 		311A4A8D22DF7447001CB461 /* imagem-programa.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8522DF7447001CB461 /* imagem-programa.png */; };
 		311A4A8E22DF7447001CB461 /* home-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8622DF7447001CB461 /* home-image.png */; };
 		311A4A9122DF7447001CB461 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 311A4A8922DF7447001CB461 /* list-fat-7.png */; };
+		31A8802222FB101700D224E6 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A8802122FB101700D224E6 /* HomeKit.framework */; };
+		31A8802422FB164E00D224E6 /* logo-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 31A8802322FB164E00D224E6 /* logo-background.png */; };
 		31E8C72322E0C197002A0242 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E8C72222E0C197002A0242 /* icon_back.png */; };
 		6901CFAF22E9403C0000DAD2 /* logo-wfmu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */; };
 		6901CFB022E9403C0000DAD2 /* background-wfmu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6901CFAE22E9403C0000DAD2 /* background-wfmu.jpg */; };
@@ -67,6 +69,9 @@
 		311A4A8522DF7447001CB461 /* imagem-programa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imagem-programa.png"; sourceTree = "<group>"; };
 		311A4A8622DF7447001CB461 /* home-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-image.png"; sourceTree = "<group>"; };
 		311A4A8922DF7447001CB461 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
+		31A8801F22FB101700D224E6 /* BFF-Muchmore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BFF-Muchmore.entitlements"; sourceTree = "<group>"; };
+		31A8802122FB101700D224E6 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		31A8802322FB164E00D224E6 /* logo-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-background.png"; sourceTree = "<group>"; };
 		31E8C72222E0C197002A0242 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
 		6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-wfmu.png"; sourceTree = "<group>"; };
 		6901CFAE22E9403C0000DAD2 /* background-wfmu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-wfmu.jpg"; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A8802222FB101700D224E6 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +113,7 @@
 				311A4A5122DF529A001CB461 /* BFF-MuchmoreTests */,
 				311A4A5C22DF529A001CB461 /* BFF-MuchmoreUITests */,
 				311A4A3B22DF5298001CB461 /* Products */,
+				31A8802022FB101700D224E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +130,7 @@
 		311A4A3C22DF5298001CB461 /* BFF-Muchmore */ = {
 			isa = PBXGroup;
 			children = (
+				31A8801F22FB101700D224E6 /* BFF-Muchmore.entitlements */,
 				69294AC622E0017B00DFCC73 /* ModalDetail */,
 				311A4A8422DF7447001CB461 /* Assets */,
 				311A4A7F22DF685D001CB461 /* Model */,
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				6901CFAE22E9403C0000DAD2 /* background-wfmu.jpg */,
+				31A8802322FB164E00D224E6 /* logo-background.png */,
 				6901CFAD22E9403C0000DAD2 /* logo-wfmu.png */,
 				311A4A8522DF7447001CB461 /* imagem-programa.png */,
 				311A4A8622DF7447001CB461 /* home-image.png */,
@@ -194,6 +203,14 @@
 				311A4A8922DF7447001CB461 /* list-fat-7.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		31A8802022FB101700D224E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31A8802122FB101700D224E6 /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		69294AC622E0017B00DFCC73 /* ModalDetail */ = {
@@ -276,6 +293,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
 						};
 					};
 					311A4A4D22DF529A001CB461 = {
@@ -318,6 +338,7 @@
 				6901CFB022E9403C0000DAD2 /* background-wfmu.jpg in Resources */,
 				6940D8B422DFC51B00669E97 /* pause.png in Resources */,
 				31E8C72322E0C197002A0242 /* icon_back.png in Resources */,
+				31A8802422FB164E00D224E6 /* logo-background.png in Resources */,
 				310F85A222F4968B00C1E569 /* background-novo.jpg in Resources */,
 				311A4A8E22DF7447001CB461 /* home-image.png in Resources */,
 				311A4A4822DF529A001CB461 /* LaunchScreen.storyboard in Resources */,
@@ -529,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BFF-Muchmore/BFF-Muchmore.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93JXUPK2SQ;
 				INFOPLIST_FILE = "BFF-Muchmore/Info.plist";
@@ -537,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muchmore.BFF-Muchmore";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.muchmore.WFMU-TDS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -548,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BFF-Muchmore/BFF-Muchmore.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93JXUPK2SQ;
 				INFOPLIST_FILE = "BFF-Muchmore/Info.plist";
@@ -556,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muchmore.BFF-Muchmore";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.muchmore.WFMU-TDS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

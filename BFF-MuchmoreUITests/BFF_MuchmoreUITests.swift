@@ -1,6 +1,6 @@
 //
 //  BFF_MuchmoreUITests.swift
-//  BFF-MuchmoreUITests
+//  WFMU-TDSUITests
 //
 //  Created by Haziel Leite Farias on 17/07/19.
 //  Copyright © 2019 Haziel. All rights reserved.
